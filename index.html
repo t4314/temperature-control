@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Control</title>
+    <title>Temperature Control & Monitoring</title>
 </head>
 <body>
-    <h1>Temperature Readings</h1>
-    <p>Sensor 1: <span id="temperature1">Loading...</span></p>
-    <p>Sensor 2: <span id="temperature2">Loading...</span></p>
-    <p>Relay Status: <span id="relayStatus">Loading...</span></p>
-    
     <h1>Set Target Temperature</h1>
     <form action="http://10.0.0.183/set-temperature" method="POST">
         <label for="temperature">Target Temperature (°F):</label>
@@ -18,22 +13,24 @@
         <input type="submit" value="Set Temperature">
     </form>
 
-    <script>
-        window.onload = function() {
-            fetch('http://10.0.0.183/status')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('temperature1').textContent = data.currentTemperature1 + ' °F';
-                    document.getElementById('temperature2').textContent = data.currentTemperature2 + ' °F';
-                    document.getElementById('relayStatus').textContent = data.relayStatus ? 'ON' : 'OFF';
-                })
-                .catch(error => {
-                    document.getElementById('temperature1').textContent = 'Error fetching data';
-                    document.getElementById('temperature2').textContent = 'Error fetching data';
-                    document.getElementById('relayStatus').textContent = 'Error fetching data';
-                    console.error('Error:', error);
-                });
-        };
-    </script>
+    <h2>Temperature Monitoring</h2>
+
+    <!-- Embed ThingSpeak visualizations -->
+    <div>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/apps/matlab_visualizations/578311?height=auto&width=auto"></iframe>
+    </div>
+    <div>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2621100/widgets/903603"></iframe>
+    </div>
+    <div>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2621100/widgets/903602"></iframe>
+    </div>
+    <div>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
+    <div>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </div>
+
 </body>
 </html>
