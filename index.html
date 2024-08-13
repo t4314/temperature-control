@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Control</title>
+    <script>
+        // Function to fetch and display temperature data
+        async function fetchTemperatureData() {
+            try {
+                const response = await fetch('http://10.0.0.183/status');
+                const data = await response.json();
+
+                document.getElementById('sensor1').textContent = `Temperature Sensor 1: ${data.currentTemperature} °F`;
+                document.getElementById('sensor2').textContent = `Temperature Sensor 2: ${data.currentTemperature} °F`;
+                document.getElementById('relayStatus').textContent = `Relay Status: ${data.relayStatus ? 'ON' : 'OFF'}`;
+            } catch (error) {
+                console.error('Error fetching temperature data:', error);
+                document.getElementById('sensor1').textContent = 'Error fetching temperature data';
+                document.getElementById('sensor2').textContent = 'Error fetching temperature data';
+            }
+        }
+
+        // Fetch data every 10 seconds
+        setInterval(fetchTemperatureData, 10000);
+
+        // Fetch data on page load
+        window.onload = fetchTemperatureData;
+    </script>
 </head>
 <body>
     <h1>Set Target Temperature</h1>
@@ -12,5 +35,10 @@
         <input type="number" id="temperature" name="temperature" required>
         <input type="submit" value="Set Temperature">
     </form>
+
+    <h2>Temperature Readings</h2>
+    <p id="sensor1">Loading Temperature Sensor 1...</p>
+    <p id="sensor2">Loading Temperature Sensor 2...</p>
+    <p id="relayStatus">Loading Relay Status...</p>
 </body>
 </html>
