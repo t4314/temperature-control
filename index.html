@@ -32,11 +32,49 @@
         .links a:hover {
             text-decoration: underline;
         }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .form-container label {
+            margin-bottom: 5px;
+        }
+        .form-container input[type="number"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .form-container input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>ThingSpeak Charts and Widgets</h1>
+
+        <!-- Temperature Input Form -->
+        <div class="form-container">
+            <h2>Set Target Temperature</h2>
+            <form action="/set-temperature" method="POST">
+                <label for="temperature">Target Temperature (°F):</label>
+                <input type="number" id="temperature" name="temperature" required>
+                <input type="submit" value="Set Temperature">
+            </form>
+        </div>
 
         <div class="chart">
             <h2>Temperature 1 Chart</h2>
