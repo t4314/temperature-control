@@ -3,14 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Control</title>
+    <title>ThingSpeak Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .chart {
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .links a {
+            display: block;
+            margin: 10px 0;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Set Target Temperature</h1>
-    <form action="http://10.0.0.183/set-temperature" method="POST">
-        <label for="temperature">Target Temperature (°F):</label>
-        <input type="number" id="temperature" name="temperature" required>
-        <input type="submit" value="Set Temperature">
-    </form>
+    <div class="container">
+        <h1>ThingSpeak Charts and Widgets</h1>
+
+        <div class="chart">
+            <h2>Temperature 1 Chart</h2>
+            <iframe src="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=TEMPERATURE+1&type=line" 
+                    allowtransparency="true"></iframe>
+        </div>
+
+        <div class="chart">
+            <h2>Temperature 2 Chart</h2>
+            <iframe src="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=TEMPERATURE+2&type=line" 
+                    allowtransparency="true"></iframe>
+        </div>
+
+        <div class="chart">
+            <h2>Temperature 1 Widget</h2>
+            <iframe src="https://thingspeak.com/channels/2621100/widgets/903602" 
+                    allowtransparency="true"></iframe>
+        </div>
+
+        <div class="chart">
+            <h2>Temperature 2 Widget</h2>
+            <iframe src="https://thingspeak.com/channels/2621100/widgets/903603" 
+                    allowtransparency="true"></iframe>
+        </div>
+
+        <div class="links">
+            <h2>Useful Links</h2>
+            <a href="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=TEMPERATURE+1&type=line" target="_blank">Temperature 1 Chart</a>
+            <a href="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=TEMPERATURE+2&type=line" target="_blank">Temperature 2 Chart</a>
+            <a href="https://thingspeak.com/channels/2621100/widgets/903602" target="_blank">Temperature 1 Widget</a>
+            <a href="https://thingspeak.com/channels/2621100/widgets/903603" target="_blank">Temperature 2 Widget</a>
+        </div>
+    </div>
 </body>
 </html>
