@@ -21,19 +21,17 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 800px; /* Increased width for better layout */
+            max-width: 500px;
             width: 100%;
         }
         h1 {
             color: #007bff;
             text-align: center;
-            margin-bottom: 20px;
         }
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-bottom: 20px;
         }
         label {
             font-weight: bold;
@@ -43,7 +41,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
-            width: 100%; /* Full width for the input field */
         }
         input[type="submit"] {
             background-color: #007bff;
@@ -54,22 +51,17 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 100%; /* Full width for the button */
         }
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
         .status {
+            margin-top: 20px;
             font-size: 18px;
             text-align: center;
         }
         .status p {
             margin: 10px 0;
-        }
-        iframe {
-            border: none;
-            margin: 10px 0;
-            width: 100%; /* Full width for embedded frames */
         }
     </style>
 </head>
@@ -83,11 +75,11 @@
         </form>
         <div class="status">
             <p id="message">Please set the target temperature.</p>
-            <iframe src="https://thingspeak.com/apps/matlab_visualizations/578311?height=auto&width=auto" height="300"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/widgets/903603" height="200"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/widgets/903602" height="200"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" height="300"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" height="300"></iframe>
+            <iframe src="https://thingspeak.com/apps/matlab_visualizations/578311?height=auto&width=auto" width="100%" height="300" frameborder="0"></iframe>
+            <iframe src="https://thingspeak.com/channels/2621100/widgets/903603" width="100%" height="200" frameborder="0"></iframe>
+            <iframe src="https://thingspeak.com/channels/2621100/widgets/903602" width="100%" height="200" frameborder="0"></iframe>
+            <iframe src="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" width="100%" height="300" frameborder="0"></iframe>
+            <iframe src="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" width="100%" height="300" frameborder="0"></iframe>
         </div>
     </div>
 </body>
