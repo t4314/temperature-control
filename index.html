@@ -16,6 +16,9 @@
     <h2>Current Temperature</h2>
     <button onclick="fetchTemperature()">Get Temperature</button>
     <p id="temperatureDisplay">Current Temperature: N/A</p>
+    <h2>Arduino Temperature</h2>
+    <button onclick="fetchArduinoTemperature()">Get Arduino Temperature</button>
+    <p id="arduinoTemperature">Arduino Temperature: N/A</p>
 
     <script>
         async function fetchTemperature() {
@@ -25,6 +28,16 @@
                 document.getElementById('temperatureDisplay').innerText = "Current Temperature: " + data;
             } catch (error) {
                 document.getElementById('temperatureDisplay').innerText = "Error fetching temperature";
+            }
+        }
+
+        async function fetchArduinoTemperature() {
+            try {
+                const response = await fetch('/arduino-temperature');
+                const data = await response.text();
+                document.getElementById('arduinoTemperature').innerText = "Arduino Temperature: " + data;
+            } catch (error) {
+                document.getElementById('arduinoTemperature').innerText = "Error fetching Arduino temperature";
             }
         }
     </script>
