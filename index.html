@@ -1,94 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Control Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 800px; /* Increased width for better layout */
-            width: 100%;
-        }
-        h1 {
-            color: #007bff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input[type="number"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            width: 100%; /* Full width for the input field */
-        }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%; /* Full width for the button */
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .status {
-            font-size: 18px;
-            text-align: center;
-        }
-        .status p {
-            margin: 10px 0;
-        }
-        iframe {
-            border: none;
-            margin: 10px 0;
-            width: 100%; /* Full width for embedded frames */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Temperature Control Dashboard</h1>
-        <form action="http://10.0.0.183/set-temperature" method="POST">
-            <label for="temperature">Target Temperature (°F):</label>
-            <input type="number" id="temperature" name="temperature" required>
-            <input type="submit" value="Set Temperature">
-        </form>
-        <div class="status">
-            <p id="message">Please set the target temperature.</p>
-            <iframe src="https://thingspeak.com/apps/matlab_visualizations/578311?height=auto&width=auto" height="300"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/widgets/903603" height="200"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/widgets/903602" height="200"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" height="300"></iframe>
-            <iframe src="https://thingspeak.com/channels/2621100/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" height="300"></iframe>
-        </div>
-    </div>
-</body>
-</html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Temperature Control</title>
+  </head>
+  <body>
+      <h1>Set Target Temperature</h1>
+      <form action="http://10.0.0.183/set-temperature" method="POST">
+          <label for="temperature">Target Temperature (°F):</label>
+          <input type="number" id="temperature" name="temperature" required>
+          <input type="submit" value="Set Temperature">
+      </form>
+  </body>
+  </html>
