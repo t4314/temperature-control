@@ -11,21 +11,5 @@
       <input type="number" id="temperature" name="temperature" required>
       <input type="submit" value="Set Temperature">
     </form>
-
-    <h2>Status</h2>
-    <p>Relay Status: <span id="relay-status">Loading...</span></p>
-
-    <script>
-      function updateStatus() {
-        fetch('/status')
-          .then(response => response.json())
-          .then(data => {
-            document.getElementById('relay-status').textContent = data.relayStatus ? 'ON' : 'OFF';
-          });
-      }
-      
-      setInterval(updateStatus, 5000);
-      updateStatus();
-    </script>
   </body>
 </html>
