@@ -13,7 +13,6 @@
     </form>
 
     <h2>Status</h2>
-    <p>Current Temperature: <span id="current-temperature">Loading...</span></p>
     <p>Relay Status: <span id="relay-status">Loading...</span></p>
 
     <script>
@@ -21,7 +20,6 @@
         fetch('/status')
           .then(response => response.json())
           .then(data => {
-            document.getElementById('current-temperature').textContent = data.currentTemperature + ' °F';
             document.getElementById('relay-status').textContent = data.relayStatus ? 'ON' : 'OFF';
           });
       }
