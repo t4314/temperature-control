@@ -1,45 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ESP32 Temperature Monitoring</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #4CAF50;
-    }
-    form {
-      margin-top: 20px;
-    }
-    input[type="number"] {
-      padding: 10px;
-      margin: 5px;
-      font-size: 16px;
-    }
-    input[type="submit"] {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <h1>Set Target Temperature</h1>
-  <form action="/set-temperature" method="POST">
-    <label for="temperature">Target Temperature (°F):</label>
-    <input type="number" id="temperature" name="temperature" required>
-    <input type="submit" value="Set Temperature">
-  </form>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ESP32 Temperature Monitoring</title>
+  </head>
+  <body>
+    <h1>Set Target Temperature</h1>
+    <form action="/set-temperature" method="POST">
+      <label for="temperature">Target Temperature (°F):</label>
+      <input type="number" id="temperature" name="temperature" required>
+      <input type="submit" value="Set Temperature">
+    </form>
+  </body>
 </html>
