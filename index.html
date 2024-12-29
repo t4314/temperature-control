@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ESP32 Temperature Monitoring</title>
-  </head>
-  <body>
-    <h1>Set Target Temperature</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Temperature Monitoring</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background-color: #f2f2f2; margin: 0; padding: 0; }
+    h1 { color: #333; }
+    p { font-size: 18px; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+    .form-group { margin: 15px 0; }
+    label { font-weight: bold; }
+    input[type="number"] { padding: 8px; width: calc(100% - 16px); }
+    input[type="submit"] { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    input[type="submit"]:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ESP32 Temperature Monitoring</h1>
+    <p><strong>Sensor 1 Temperature:</strong> 72.5 °F</p>
+    <p><strong>Sensor 2 Temperature:</strong> 68.3 °F</p>
+    <p><strong>Relay Status:</strong> ON</p>
+    <p><strong>Target Temperature:</strong> 70 °F</p>
+    <h2>Set Target Temperature</h2>
     <form action="/set-temperature" method="POST">
-      <label for="temperature">Target Temperature (°F):</label>
-      <input type="number" id="temperature" name="temperature" required>
+      <div class="form-group">
+        <label for="temperature">Target Temperature (°F):</label>
+        <input type="number" id="temperature" name="temperature" required>
+      </div>
       <input type="submit" value="Set Temperature">
     </form>
-  </body>
+  </div>
+</body>
 </html>
